@@ -1,12 +1,21 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <form action="/submitTrade" method="POST">
+  <a href="/trade" class="btn btn-warning" role="button">Trade</a>
+ <title>Tradable Products </title>
+ <br>
+   <b>Please select a USD currency based trade from the dropdown list below: 
+ <br><br>
+ <form action="/submitTrade" method="POST">
     <select name="side">
-      <option value="b">Buy</option>
-      <option value="s">Sell</option>
+      <option value="Buy">Buy</option>
+      <option value="Sell">Sell</option>
     </select>
-    symbol <input type="text" name="symbol">
+    symbol <select name = "ticker"> 
+	{% for d in  symbollist  %}
+		<option value={{d}}>{{d}}</option>
+	{% endfor %}
+    </select>
     quantity <input type="number" name="quantity">
     <input type="submit" class="btn btn-info" value="Execute">
   </form>
