@@ -1,0 +1,8 @@
+Flask
+scipy
+pandas
+bs4
+requests
+flask_pymongo
+matplotlib
+numpy
